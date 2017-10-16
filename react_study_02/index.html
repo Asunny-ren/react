@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>react hello world</title>
+  <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+  <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+  <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function formatterUser (user) {
+      return user.firstname + ' ' + user.lastname;
+    }
+    const user = {
+      firstname: 'hello',
+      lastname: 'react'
+    }
+    const element = (
+      <h1>
+        {formatterUser(user)}
+      </h1>
+    );
+    const element2 = React.createElement(
+      'h1',
+      {className: 'big-box'},
+      'hello react2'
+    );
+    function tick () {
+      const element3 = (
+        <div>
+          <h1>hello world</h1>
+          <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        </div>
+      );
+      ReactDOM.render(
+        element3,
+        document.getElementById('root')
+      );
+    }
+    setInterval(tick, 1000);
+
+    // const ele = <h1>hello react</h1>;
+    // ReactDOM.render(
+    //   element2,
+    //   document.getElementById('root')
+    // );
+  </script>
+</html>
